@@ -10,14 +10,43 @@
     <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
     	<p>User: <input type="text" th:field="*{id}" /></p>
         <p>What are you thinking?: <input type="text" th:field="*{content}" /></p>
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        <p><input type="submit" value="Tweet" /> 
 		<h6> ------------------------------------------------------------------------------------</h6>
     </form>
 	
-	<h2>Tweet history</h2>
-    <p th:text="' ' + ' ' +${greeting.id}" />
-    <p th:text="'-' + ' '+ ${greeting.content}" />	
-	<!--A PARTIR DAQUI EH TESTE-->
+	<!-- <h2>Tweet history</h2>  -->
+	<!-- <p th:text="' ' + ' ' +${greeting.id}" />  -->
+	<!-- <p th:text="'-' + ' '+ ${greeting.content}" />	  -->
+	 
+	 
+		
+	  <table class="table">
+			<thead>
+				<tr>
+	        	<tr th:each="g : ${greet}">
+	        		<td class="remover"></td>
+	            	<td><span th:text="${g.id}"> User </span> : </td>	<td><span th:text="${g.content}">  </span></td>			
+				</tr>
+			</thead>		
+			<tbody>
+				<tr th:if="${greet.empty}">
+	            	<td colspan="2"> No Tweets Available </td>
+	        	</tr>
+	        	<tr th:each="g : ${greet}">
+	        		<td class="remover"></td>
+	            	
+	        	</tr>	        	 
+			</tbody>
+		</table>  
+	
 	
 </body>
 </html>
+
+
+
+
+
+
+
+
