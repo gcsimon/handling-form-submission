@@ -16,16 +16,16 @@ public class GreetingController {
 	this.repository = r;
 	}
 	
-    @GetMapping("/greeting")
+    @GetMapping("greeting")
     public String listAll(Model model, Greeting greeting) {
         model.addAttribute("greet", this.repository.findAll());
         return "greeting";
     }
 
-    @PostMapping("/greeting")
+    @PostMapping("greeting")
     public String greetingSubmit(@ModelAttribute(name="greeting") Greeting greeting) {
 		this.repository.save(greeting);
-        return "greeting";
+        return "redirect:/greeting";
     }
 
 }
