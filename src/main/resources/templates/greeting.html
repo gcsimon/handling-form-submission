@@ -25,17 +25,14 @@
 				<tr>
 	        	<tr th:each="g : ${greet}">
 	        		<td class="remover"></td>
-	            	<td><span th:text="${g.id}"> User </span> : </td>	<td><span th:text="${g.content}">  </span></td>			
+	            	<td><span th:text="${g.id}"> User </span> : </td>	
+					<td><span th:text="${g.content}">  </span>  </td>			
 				</tr>
 			</thead>		
 			<tbody>
 				<tr th:if="${greet.empty}">
 	            	<td colspan="2"> No Tweets Available </td>
 	        	</tr>
-	        	<!-- <tr th:each="g : ${greet}"> -->
-	        		<!-- <td class="remover"></td> -->
-	            	
-	        	<!-- </tr>	        	  -->
 			</tbody>
 		</table>  
 	

@@ -41,8 +41,9 @@ public class Greeting {
 	
 	protected Greeting(){}
 	
-	public Greeting(String content){
+	public Greeting(String content, String id){
 		this.content = content;
+		this.id = id;
 		
 	}
 

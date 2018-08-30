@@ -7,5 +7,5 @@ import org.springframework.data.repository.Repository;
 public interface GreetingRepository extends Repository<Greeting, String> {
 
 	public List<Greeting> findAll();	
-	public void save(Greeting task);
+	public void save(Greeting tweet);
 }
