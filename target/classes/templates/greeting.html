@@ -8,14 +8,14 @@
 	<h1>Welcome to fakeTwitter</h1>
 	<h6> ------------------------------------------------------------------------------------</h6>
     <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
-    	<p>User: <input type="text" th:field="*{id}" /></p>
+    	<p>User: <input type="text" th:field="*{username}" /></p>
         <p>What are you thinking?: <input type="text" th:field="*{content}" /></p>
         <p><input type="submit" value="Tweet" /> 
 		<h6> ------------------------------------------------------------------------------------</h6>
     </form>
 	
 	<!-- <h2>Tweet history</h2>  -->
-	<!-- <p th:text="' ' + ' ' +${greeting.id}" />  -->
+	<!-- <p th:text="' ' + ' ' +${greeting.username}" />  -->
 	<!-- <p th:text="'-' + ' '+ ${greeting.content}" />	  -->
 	 
 	 
@@ -25,7 +25,7 @@
 				<tr>
 	        	<tr th:each="g : ${greet}">
 	        		<td class="remover"></td>
-	            	<td><span th:text="${g.id}"> User </span> : </td>	
+	            	<td><span th:text="${g.username}"> User </span> : </td>	
 					<td><span th:text="${g.content}">  </span>  </td>			
 				</tr>
 			</thead>		

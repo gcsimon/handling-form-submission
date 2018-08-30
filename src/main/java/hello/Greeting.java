@@ -6,24 +6,37 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Entity
 public class Greeting {
 
 	@Id
 	@NotNull
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
+	
+	@NotNull
 	@Size(min=2, max=30)
-    private String id;
+    private String username;
 	
 	@NotNull
     private String content;
-
-    public String getId() {
-        return id;
+	
+	public String getUsername() {
+        return username;
     }
 
-    public void setId(String id) {
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public Long getId() {
+        return id;
+        
+        
+    }
+
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -41,8 +54,9 @@ public class Greeting {
 	
 	protected Greeting(){}
 	
-	public Greeting(String content, String id){
+	public Greeting(String content, String username, Long id){
 		this.content = content;
+		this.username = username;
 		this.id = id;
 		
 	}
