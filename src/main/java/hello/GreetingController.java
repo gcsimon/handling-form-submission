@@ -27,6 +27,10 @@ public class GreetingController {
 		this.repository.save(greeting);
         return "redirect:/greeting";
     }
-
+    
+    @GetMapping("error")
+    public String test() {
+        return "greeting";
+    }
 }
 

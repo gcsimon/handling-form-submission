@@ -1,26 +1,36 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>fakeTwitter</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>fakeTwitter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+
+
 <body>
-	<h1>Welcome to fakeTwitter</h1>
-	<h6> ------------------------------------------------------------------------------------</h6>
-    <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
-    	<p>User: <input type="text" th:field="*{username}" /></p>
-        <p>What are you thinking?: <input type="text" th:field="*{content}" /></p>
-        <p><input type="submit" value="Tweet" /> 
-		<h6> ------------------------------------------------------------------------------------</h6>
-    </form>
-	
-	<!-- <h2>Tweet history</h2>  -->
-	<!-- <p th:text="' ' + ' ' +${greeting.username}" />  -->
-	<!-- <p th:text="'-' + ' '+ ${greeting.content}" />	  -->
-	 
-	 
-		
-	  <table class="table">
+
+<div class="jumbotron text-center">
+  <h2>FakeTwitter</h2>
+  <p>The best online Website!</p> 
+</div>  
+
+
+<div class="container">
+    <div class="col-sm-3">
+        <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+    	<h5> User: </h5>
+		<p><input type="text" th:field="*{username}" /></p>
+        <h5> What are you thinking?:</h5>
+		<p><input type="text" th:field="*{content}" /></p>
+        <p><input type="submit" value="Tweet" />  
+    </div>
+	<div class="col-sm-1">
+    </div>
+    <div class="col-sm-6">
+      	  <table class="table">
 			<thead>
 				<tr>
 	        	<tr th:each="g : ${greet}">
@@ -35,10 +45,59 @@
 	        	</tr>
 			</tbody>
 		</table>  
-	
-	
+
+    </div>    
+</div>
+
 </body>
+
 </html>
+
+
+<!-- <body>	 -->
+<!-- <style> -->
+	<!-- body { -->
+    <!-- background-color: rgb(102, 255, 255); -->
+	<!-- } -->
+	<!-- h1 { -->
+		<!-- color: green; -->
+		<!-- font-family: verdana; -->
+		<!-- font-size: 300%; -->
+	<!-- } -->
+	<!-- p  { -->
+    <!-- color: Blue; -->
+    <!-- font-family: courier; -->
+    <!-- font-size: 100%; -->
+    
+    
+	<!-- } -->
+	<!-- </style>  -->
+	<!-- <h1>Welcome to fakeTwitter</h1> -->
+	<!-- <h6> ------------------------------------------------------------------------------------</h6> -->
+    <!-- <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post"> -->
+    	<!-- <p>User: <input type="text" th:field="*{username}" /></p> -->
+        <!-- <p>What are you thinking?: <input type="text" th:field="*{content}" /></p> -->
+        <!-- <p><input type="submit" value="Tweet" />  -->
+		<!-- <h6> ------------------------------------------------------------------------------------</h6> -->
+    <!-- </form>	  -->
+		
+<!-- 	  <table class="table">
+			<thead>
+				<tr>
+	        	<tr th:each="g : ${greet}">
+	        		<td class="remover"></td>
+	            	<td><span th:text="${g.username}"> User </span> : </td>	
+					<td><span th:text="${g.content}">  </span>  </td>			
+				</tr>
+			</thead>		
+			<tbody>
+				<tr th:if="${greet.empty}">
+	            	<td colspan="2"> No Tweets Available </td>
+	        	</tr>
+			</tbody>
+		</table>  	 -->
+	
+<!-- </body> --> 
 
 
 
