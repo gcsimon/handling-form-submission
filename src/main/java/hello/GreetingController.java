@@ -26,11 +26,15 @@ public class GreetingController {
     public String greetingSubmit(@ModelAttribute(name="greeting") Greeting greeting) {
 		this.repository.save(greeting);
         return "redirect:/greeting";
-    }
-    
-    @GetMapping("error")
-    public String test() {
-        return "greeting";
-    }
+    }    
+	
+	@GetMapping("/")
+    public String greetingSubmitt() {
+        return "redirect:/greeting";
+    }  
+	
+	
+
+	
 }
 
