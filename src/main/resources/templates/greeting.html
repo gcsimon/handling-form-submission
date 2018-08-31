@@ -22,9 +22,9 @@
     <div class="col-sm-3">
         <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
     	<h5> User: </h5>
-		<p><input type="text" th:field="*{username}" /></p>
+		<p><input type="text" th:field="*{username}" required/></p>
         <h5> What are you thinking?:</h5>
-		<p><input type="text" th:field="*{content}" /></p>
+		<p><input type="text" th:field="*{content}" required/></p>
         <p><input type="submit" value="Tweet" />  
     </div>
 	<div class="col-sm-1">
