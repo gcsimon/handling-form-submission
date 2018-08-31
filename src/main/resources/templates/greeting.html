@@ -20,7 +20,7 @@
 
 <div class="container">
     <div class="col-sm-3">
-        <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+        <form action="#" th:action="@{/}" th:object="${greeting}" method="post">
     	<h5> User: </h5>
 		<p><input type="text" th:field="*{username}" required/></p>
         <h5> What are you thinking?:</h5>
